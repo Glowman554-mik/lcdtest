@@ -4,14 +4,14 @@
  */
 
 #include "mbed.h"
+#include "hwlcd.hpp"
 
-
-DigitalOut led(LED1);
+I2C i2c(I2C_SDA, I2C_SCL);
 
 int main() {
+    hwlcd lcd(&i2c, i2c_find_first_device(i2c));
+    lcd.init(true, false);
+    lcd.puts("Hewoo");
 
-    while (true) {
-        ThisThread::sleep_for(200ms);
-        led = !led;
-    }
+    while (true) {}
 }
