@@ -4,7 +4,7 @@
  */
 
 #include "mbed.h"
-#include "hwlcd.hpp"
+#include <hwlcd.hpp>
 
 I2C i2c(I2C_SDA, I2C_SCL);
 
